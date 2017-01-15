@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hand.hap.sale.mapper.OrderMapper" >
+  <resultMap id="BaseResultMap" type="com.hand.hap.sale.dto.Order">
+    <result column="company_Name" jdbcType="VARCHAR" property="companyName" />
+    <result column="customer_Name" jdbcType="VARCHAR" property="customerName" />
+    <result column="order_Number" jdbcType="INTEGER" property="orderNumber" />
+    <result column="order_Status" jdbcType="VARCHAR" property="orderStatus" />
+    <result column="order_Date" jdbcType="TIMESTAMP" property="orderDate" />
+    <result column="orderPrice" jdbcType="DECIMAL" property="orderprice" />
+    <result column="companyId" jdbcType="INTEGER" property="companyid" />
+  </resultMap>
+
+  <select id="selectByCondition" parameterType="com.hand.hap.sale.dto.Order" resultMap="BaseResultMap">
+   SELECT customer_Name,company_Name,order_Number,order_Status,order_Date,(ORDERD_QUANTITY*UNIT_SELLING_PRICE) AS orderPrice
+ FROM
+ HAP_ORG_COMPANYS a,
+ HAP_AR_CUSTOMERS b,
+ HAP_OM_ORDER_HEADERS o,
+ HAP_OM_ORDER_LINES d WHERE a.COMPANY_ID = o.COMPANY_ID AND b.CUSTOMER_ID = o.CUSTOMER_ID
+ AND d.HEADER_ID = o.HEADER_ID
+  </select>
+
+</mapper>
