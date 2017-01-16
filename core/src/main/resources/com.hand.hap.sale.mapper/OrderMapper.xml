@@ -7,8 +7,8 @@
     <result column="order_Number" jdbcType="INTEGER" property="orderNumber" />
     <result column="order_Status" jdbcType="VARCHAR" property="orderStatus" />
     <result column="order_Date" jdbcType="TIMESTAMP" property="orderDate" />
-    <result column="orderPrice" jdbcType="DECIMAL" property="orderprice" />
-    <result column="companyId" jdbcType="INTEGER" property="companyid" />
+    <result column="orderPrice" jdbcType="DECIMAL" property="orderPrice" />
+    <result column="companyId" jdbcType="INTEGER" property="companyId" />
   </resultMap>
 
   <select id="selectByCondition" parameterType="com.hand.hap.sale.dto.Order" resultMap="BaseResultMap">

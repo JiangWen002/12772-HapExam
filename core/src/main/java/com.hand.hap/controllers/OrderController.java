@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * Created by Javon on 2017/1/15.
  */
-
+@Controller
 public class OrderController extends BaseController {
     @Autowired
     private IOrderService orderService;

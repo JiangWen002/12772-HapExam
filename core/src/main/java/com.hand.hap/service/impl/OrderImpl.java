@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by Javon on 2017/1/15.
  */
-
+@Service
 public class OrderImpl extends BaseServiceImpl<Order> implements IOrderService{
     @Autowired
     private OrderMapper orderMapper;
